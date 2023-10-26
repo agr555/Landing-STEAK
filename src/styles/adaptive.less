@@ -1,0 +1,183 @@
+@import "variables";
+//@import "animation";
+@media screen and (max-width: 1920px) {
+
+}
+@media screen and (max-width: 1229px) {
+  .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 1100px) {
+
+  .checkout{
+    display: flex;
+  }
+  .checkout-left {
+    z-index: 1;
+  }
+
+
+
+ .advanced {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+  .advanced-left{
+    order: 0;
+  }
+  .image-second{
+    order: 1;
+  }
+  .image-first{
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-info {
+    padding: 135px 0 200px;
+    //max-width: 590px;
+  }
+.main-action{
+  text-align: center;
+  margin-top: 50px;
+}
+  .checkout {
+    flex-direction: column;
+  }
+
+  img {
+    width: 330px;
+  }
+
+  h1 {
+
+    font-size: 40px;
+    line-height: 120%; /* 62.4px */
+   // max-width: 350px;
+    margin: 0 40px;
+    text-align: center;
+  }
+
+  .above-title {
+    font-size: 15px;
+    //max-width: 330px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .text-info {
+    //max-width: 330px;
+    margin: 0 40px 35px;
+
+  }
+  .form-actions {
+    width: 330px;
+    margin: 0 40px 20px ;
+  }
+  .section2 {
+
+    padding-top: 150px;
+  }
+
+  .section4{
+    padding: 150px 0  150px;
+    .container{
+      padding: 0;
+
+    flex-direction: column;
+    text-align: center;
+    &.above-title{
+      align-items: start;
+    }
+  }
+  .checkout-right{
+    display: block;
+  }
+  .checkout-title {
+    margin-bottom: 74px;
+  }
+
+  .checkout-beef{
+    position: relative;
+
+  }
+  .checkout-ellipse{
+    position: relative;
+    bottom: 0;
+    right: 0;
+  }
+}
+  }
+
+@media screen and (max-width: 450px) {
+  .main-info {
+    padding: 135px 0 200px;
+    //max-width: 590px;
+  }
+  .main-action{
+    text-align: center;
+    margin-top: 50px;
+  }
+  .checkout {
+    flex-direction: column;
+  }
+
+  img {
+    width: 280px;
+  }
+
+  h1 {
+
+    font-size: 40px;
+    line-height: 120%; /* 62.4px */
+    // max-width: 350px;
+    margin: 0 30px;
+    text-align: center;
+  }
+
+  .above-title {
+    font-size: 15px;
+    //max-width: 330px;
+  }
+
+  .text-info {
+    max-width: 330px;
+   // margin: 0 40px;
+
+  }
+  .form-actions {
+    width: 330px;
+    margin: 0 0 20px ;
+  }
+  .section2 {
+
+    padding-top: 150px;
+  }
+
+  .section4{
+    padding: 150px 0  150px;
+    .container{
+      padding: 0;
+
+      flex-direction: column;
+      text-align: center;
+      &.above-title{
+        align-items: start;
+      }
+    }
+    .checkout-right{
+      display: block;
+    }
+    .checkout-title {
+      margin-bottom: 74px;
+    }
+
+
+  }
+}
