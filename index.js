@@ -25,7 +25,7 @@ $(() => {
             },
             400: {
                 items: 1,
-                
+
             },
             900: {
                 items: 2
@@ -36,73 +36,73 @@ $(() => {
         }
     });
 
- /*   $('#reserve-button > button').click(() => {
-        let name = $('#name');
-        let count = $('#count');
-        let phone = $('#phone');
-        let time = $('#time');
-        if (name.val() && name.val() && phone.val() && time.val()) {
-            $.ajax({
-                type: 'post',
-                url: 'mail.php',
-                data: 'name=' + name.val() + '&count=' + count.val() + '&phone=' + phone.val() + '&time=' + time.val(),
-                success: () => {
-                    $('#reservation-sent').show();
-                    $('#reservation-content').hide();
-                },
-                error: () => {
-                    $('#reservation-container').hide();
-                    alert('Ошибка бронирования, свяжитесь, пожалуйста, по номеру телефона.')
-                }
-            });
-        } else {
-            $('#reserve-error').show();
-        }
-    });*/
+    /*   $('#reserve-button > button').click(() => {
+           let name = $('#name');
+           let count = $('#count');
+           let phone = $('#phone');
+           let time = $('#time');
+           if (name.val() && name.val() && phone.val() && time.val()) {
+               $.ajax({
+                   type: 'post',
+                   url: 'mail.php',
+                   data: 'name=' + name.val() + '&count=' + count.val() + '&phone=' + phone.val() + '&time=' + time.val(),
+                   success: () => {
+                       $('#reservation-sent').show();
+                       $('#reservation-content').hide();
+                   },
+                   error: () => {
+                       $('#reservation-container').hide();
+                       alert('Ошибка бронирования, свяжитесь, пожалуйста, по номеру телефона.')
+                   }
+               });
+           } else {
+               $('#reserve-error').show();
+           }
+       });*/
 
 
-//По выбору меню О НАС  перейти к блоку
+    //По выбору меню О НАС  перейти к блоку
     $('.about-us').click((e) => {
-       $('.section2')[0].scrollIntoView({behavior: "smooth"});
+        $('.section2')[0].scrollIntoView({ behavior: "smooth" });
     });
-//По выбору меню  МЕНЮ  перейти к блоку карточек
+    //По выбору меню  МЕНЮ  перейти к блоку карточек
     $('.our-menu').click((e) => {
-        $('.order-items')[0].scrollIntoView({behavior: "smooth"});
+        $('.order-items')[0].scrollIntoView({ behavior: "smooth" });
     });
-//По выбору меню  ЗАКАЗАТЬ  перейти к блоку
+    //По выбору меню  ЗАКАЗАТЬ  перейти к блоку
     $('.to-order').click((e) => {
-        $('.checkout')[0].scrollIntoView({behavior: "smooth"});
+        $('.checkout')[0].scrollIntoView({ behavior: "smooth" });
     });
-//По кнопке ВЫБРАТЬ СТЕЙК  перейти к блоку
+    //По кнопке ВЫБРАТЬ СТЕЙК  перейти к блоку
     $('.btn-choice').click((e) => {
-        $('.section3')[0].scrollIntoView({behavior: "smooth"});
+        $('.section3')[0].scrollIntoView({ behavior: "smooth" });
     });
 
 
     $('button.owl-dot').click((e) => {
-        $('.section3')[0].scrollIntoView({behavior: "smooth"});
+        $('.section3')[0].scrollIntoView({ behavior: "smooth" });
     });
-//По кнопке заказать скопировать название карточки и перейти сразу к форме заказа
-//$('#steakForm').attr('placeholder', "Name");
-let productInput = document.getElementById('steakForm');
-$('.btn-order').click((e) => {
-    productInput.value = $(e.target).parents('.order-item').find('.item-title').text();
-    $('.checkout')[0].scrollIntoView({behavior: "smooth"});
-});
+    //По кнопке заказать скопировать название карточки и перейти сразу к форме заказа
+    //$('#steakForm').attr('placeholder', "Name");
+    let productInput = document.getElementById('steakForm');
+    $('.btn-order').click((e) => {
+        productInput.value = $(e.target).parents('.order-item').find('.item-title').text();
+        $('.checkout')[0].scrollIntoView({ behavior: "smooth" });
+    });
 
 
-document.getElementById('small-menu').onclick = function () {
-    document.getElementById('menu').classList.add('open');
-}
-document.querySelectorAll('#menu *').forEach((item) => {
-    item.onclick = () => {
-        document.getElementById('menu').classList.remove('open');
+    document.getElementById('small-menu').onclick = function () {
+        document.getElementById('menu').classList.add('open');
     }
-});
+    document.querySelectorAll('#menu *').forEach((item) => {
+        item.onclick = () => {
+            document.getElementById('menu').classList.remove('open');
+        }
+    });
 
 
 
-///////////////////отправка
+    ///////////////////отправка
     /////////////////
     let loader = $('.loader');
 
@@ -115,7 +115,7 @@ document.querySelectorAll('#menu *').forEach((item) => {
         let name = $('#nameForm');
         let phone = $('#phoneForm');
 
-        phone.inputmask({"mask": "+380 (99) 999 - 99 - 99", greedy: true}); //specifying options
+        phone.inputmask({ "mask": "+380 (99) 999 - 99 - 99", greedy: true }); //specifying options
 
         let hasError = false;
         $('.error-input').hide();
@@ -149,14 +149,14 @@ document.querySelectorAll('#menu *').forEach((item) => {
             $.ajax({
                 type: "POST",
                 url: "http://testologia.site/checkout",
-              //  url: 'mail1.php',
-                data: {steak: steak.val(), name: name.val(), phone: phone.value}
+                //  url: 'mail1.php',
+                data: { steak: steak.val(), name: name.val(), phone: phone.value }
             })
                 .done(function (msg) {
                     loader.hide();
                     if (msg.success) {
                         alert("Спасибо, мы свяжемся с вами в ближайшее время!");
-                     //  form.hide();
+                        //  form.hide();
                     } else {
                         alert("Возникла ошибка при отправке данных");
                     }
@@ -166,29 +166,29 @@ document.querySelectorAll('#menu *').forEach((item) => {
         } else (console.log('hasError'));
     });
 
-/*
-    $('#submitForm').click(() => {
-        let steak = $('#steakForm');
-        let name = $('#nameForm');
-        let phone = $('#phoneForm');
-
-        if (name.val() && name.val() && phone.value ) {
-            $.ajax({
-                type: "POST",
-                url: 'mail.php',
-                data: {steak: steak.val(), name: name.val(), phone: phone.value},
-                success: () => {
-                    alert('HELLO.')
-                },
-                error: () => {
-                    alert('Ошибка бронирования, свяжитесь, пожалуйста, по номеру телефона.')
-                }
-            });
-        } else {
-            alert('Ошибка.')
-        }
-    });
-
-*/
-///////////////////////////////////
+    /*
+        $('#submitForm').click(() => {
+            let steak = $('#steakForm');
+            let name = $('#nameForm');
+            let phone = $('#phoneForm');
+    
+            if (name.val() && name.val() && phone.value ) {
+                $.ajax({
+                    type: "POST",
+                    url: 'mail.php',
+                    data: {steak: steak.val(), name: name.val(), phone: phone.value},
+                    success: () => {
+                        alert('HELLO.')
+                    },
+                    error: () => {
+                        alert('Ошибка бронирования, свяжитесь, пожалуйста, по номеру телефона.')
+                    }
+                });
+            } else {
+                alert('Ошибка.')
+            }
+        });
+    
+    */
+    ///////////////////////////////////
 });
